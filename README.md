@@ -12,7 +12,7 @@ Feedback is wanted, collaboration is encouraged. Please do this via the GitHub r
 
 use  `pip install espresso-ir` to install the module.
 
-GitHub repositiory <https://github.com/Terrizmo/espresso_ir>
+GitHub repositiory <https://github.com/Terrizmo/espresso-ir>
 
 ## Requirements
 
