@@ -32,8 +32,3 @@ At this time you can on dump the memory for 50 EC2 hosts in one CLI entry. This 
 - Features planned
 - Known bugs (shortlist)
 
-## Contact
-
-- Email address
-- Google Group/mailing list (if applicable)
-- IRC or Slack (if applicable)
