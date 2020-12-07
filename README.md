@@ -4,7 +4,7 @@
 
 Espresso IR provides the fuctionality to automate memory aquisitions of Windows based EC2 instances and stores them in an S3 bucket. Currently it uses DumpIt to facilitate the memory aquisition part but with some minor edits you could use your tool of choice.
 
-This was created as part of a research paper the author conducted for their MSc dissertaion paper.
+This was created as part of a research paper the author conducted for their MSc dissertaion.
 
 Feedback is wanted, collaboration is encouraged. Please do this via the GitHub repositiory.
 
