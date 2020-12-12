@@ -10,7 +10,7 @@ Feedback is wanted, collaboration is encouraged. Please do this via the GitHub r
 
 ## Getting Started
 
-use  `pip install espresso-ir` to install the module or clone from this GitHub repositiory <https://github.com/Terrizmo/espresso_ir> and from inside the repository directory run `pip install .`
+use  `pip install espresso-ir` to install the module or clone from this GitHub repositiory <https://github.com/Terrizmo/espresso-ir> and from inside the repository directory run `pip install .`
 
 You must have an account with programatic access to your AWS environment. Once you have the access-key-id and secret-access-key. Once you have this information run `aws configure` and follow the prompt. AWS CLI will store these details in your home directory. These details will then be used each time your run an espresso_ir command. Further infomation can be found in the [AWS documents](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
 
