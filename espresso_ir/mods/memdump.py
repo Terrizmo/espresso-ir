@@ -8,10 +8,12 @@ ssm = boto3.client('ssm')
 ec2 = boto3.resource('ec2')
 Instance = ec2.Instance('id')
 
+
 Instance_list = []
 DumpBucket = 'mem-dump-test-bucket'
 bucketName = 'dumpit-test-bucket'
 S3Key = 'DumpItx64.exe'
+windowsPath = 'C:\\users\\Administrator\\Downloads\\'
 caseId = ''
 dump_instance_list =[]
 
@@ -41,13 +43,13 @@ def dump_memory(caseId,instance_list):
                 #Keep a list of Windows hosts to send the dump memory commands to. Max of 50 can be sent at once 
                 dump_instance_list.extend(InstanceIds)
     
-                commands = ["Copy-S3Object -BucketName " + binary_bucket + " -Key " + S3Key + " -LocalFolder C:\\users\\Administrator\\Downloads",
+                commands = ["$InstanceId = Get-EC2InstanceMetadata -Category InstanceId",
+                            "mkdir " + windowsPath + "$InstanceId",
+                            "Copy-S3Object -BucketName " + binary_bucket + " -Key " + S3Key + " -LocalFolder " + windowsPath,
                             "cd  C:\\users\\Administrator\\Downloads",
-                            "$InstanceId = Get-EC2InstanceMetadata -Category InstanceId",
-                            "mkdir $InstanceId",
                             ".\\DumpItx64.exe /N /Q /O .\\$InstanceId\\$InstanceId",
-                            "Write-S3Object -bucketname " + dump_bucket + " -Folder .\\$InstanceId\\ " + "-keyprefix $InstanceId",
-                            "Remove-Item * -Recurse"]  # clean up on the Instances and remove the exe and memory dump
+                            "Write-S3Object -bucketname " + dump_bucket + " -Folder " + windowsPath + "$InstanceId " + "-keyprefix $InstanceId",
+                            "Remove-Item DumpItx64.exe, " + windowsPath + "$InstanceId -Recurse"]  # clean up on the Instances and remove the exe and memory dump
             else:
                 logging.error(f"{InstanceId} is not a windows host. Memory capture not attempted")
         
