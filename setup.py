@@ -15,7 +15,7 @@ setup(
     name='espresso_ir',
     version='0.0.2',
     author='Terrizmo',
-    author_email='terrizmo',    
+    author_email='espressoir@outlook.com',    
     description='IR tool for acquiring memory images from windows EC2 instances on AWS',
     long_description=long_description,
     long_description_content_type="text/markdown",
