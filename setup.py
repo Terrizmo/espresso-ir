@@ -31,7 +31,7 @@ setup(
         "Intended Audience :: Information Technology",
         "Intended Audience :: Science/Research",
         "Intended Audience :: System Administrators",
-        "Environment:: Console",
+        "Environment :: Console",
         "Natural Language :: English",
         "Programming Language :: Python :: 3.7",
         "Topic :: Security",
