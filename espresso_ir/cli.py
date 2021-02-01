@@ -152,7 +152,8 @@ def cli():
     t1 = time.time()
     total = t1-t0
 
-    print(total)
+    print(f'Completed in {total} seconds')
+    
     
 if __name__ == "__main__":
     cli()
